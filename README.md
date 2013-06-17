@@ -1,5 +1,5 @@
-SafeNuGet
-=========
+OWASP SafeNuGet
+===============
 MsBuild task to warn about insecure NuGet libraries:
 https://nuget.org/packages/SafeNuGet/
 
@@ -12,11 +12,11 @@ Installation
 
 Want to contribute?
 -------------------
-Great! If you want to contribute to the list of unsafe libraries, please create a pull request, register it as an [issue](https://github.com/eoftedal/SafeNuGet/issues) or email me at erlend@oftedal.no.
+Great! If you want to contribute to the list of unsafe libraries, please create a pull request, register it as an [issue](https://github.com/OWASP/SafeNuGet/issues) or email me at erlend.oftedal@owasp.org.
 
 Code contributions are also very welcome. Fork and create a pull request.
 
 Experience an issue?
 --------------------
-Register it here at github: [issues](https://github.com/eoftedal/SafeNuGet/issues)
+Register it here at github: [issues](https://github.com/OWASP/SafeNuGet/issues)
 
