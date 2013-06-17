@@ -5,19 +5,21 @@ using System.Text;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 using System.IO;
-using SafeNuGet.NuGet;
-using SafeNuGet.Unsafe;
+using Owasp.SafeNuGet.NuGet;
+using Owasp.SafeNuGet.Unsafe;
 
 
-namespace SafeNuGet
+namespace Owasp.SafeNuGet
 {
     public class AreNuGetPackagesSafe : Task
     {
         public string ProjectPath { get; set; }
         public string CacheTimeInMinutes { get; set; }
+        private const String _id = "OWASP SafeNuGet";
 
         public override bool Execute()
         {
+            
             var nugetFile = Path.Combine(ProjectPath, "packages.config");
             int cacheTime = 0;
             if (!String.IsNullOrEmpty(CacheTimeInMinutes) && !int.TryParse(CacheTimeInMinutes, out cacheTime))
@@ -26,7 +28,7 @@ namespace SafeNuGet
                 return false;
             }
 
-            BuildEngine.LogMessageEvent(new BuildMessageEventArgs("Checking " + nugetFile + " ...", "", "SafeNuGet", MessageImportance.High));
+            BuildEngine.LogMessageEvent(new BuildMessageEventArgs("Checking " + nugetFile + " ...", "", _id, MessageImportance.High));
             if (File.Exists(nugetFile))
             {
                 var packages = new NuGetPackageLoader().LoadPackages(nugetFile);
@@ -38,7 +40,7 @@ namespace SafeNuGet
                     unsafePackages = new PackageListLoader().GetCachedUnsafePackages(cacheFolder, cacheTime, out cacheHit);
                     if (cacheHit)
                     {
-                        BuildEngine.LogMessageEvent(new BuildMessageEventArgs("Using cached list of unsafe packages", "", "SafeNuGet", MessageImportance.High));
+                        BuildEngine.LogMessageEvent(new BuildMessageEventArgs("Using cached list of unsafe packages", "", _id, MessageImportance.High));
                     }
                 }
                 else
@@ -47,11 +49,11 @@ namespace SafeNuGet
                 }
                 var failures = new DecisionMaker().Evaluate(packages, unsafePackages);
                 if (failures.Count() == 0) {
-                    BuildEngine.LogMessageEvent(new BuildMessageEventArgs("No vulnerable packages found", "", "SafeNuGet", MessageImportance.High));
+                    BuildEngine.LogMessageEvent(new BuildMessageEventArgs("No vulnerable packages found", "", _id, MessageImportance.High));
                 } else {
                     foreach(var k in failures) {
                         var s = k.Key.Id + " " + k.Key.Version;
-                        BuildEngine.LogWarningEvent(new BuildWarningEventArgs("SECURITY ERROR", s, nugetFile, 0, 0, 0, 0, "Library is vulnerable: " + s + " " + k.Value.InfoUri , "", "SafeNuGet"));
+                        BuildEngine.LogWarningEvent(new BuildWarningEventArgs("SECURITY WARNING", s, nugetFile, 0, 0, 0, 0, "Library is vulnerable: " + s + " " + k.Value.InfoUri, "", _id));
                     }
                     return false;
                 }

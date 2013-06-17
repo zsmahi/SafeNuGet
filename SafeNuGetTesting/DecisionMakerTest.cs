@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SafeNuGet;
-using SafeNuGet.NuGet;
-using SafeNuGet.Unsafe;
+using Owasp.SafeNuGet;
+using Owasp.SafeNuGet.NuGet;
+using Owasp.SafeNuGet.Unsafe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SafeNuGetTesting
+namespace Owasp.SafeNuGetTesting
 {
     [TestClass]
     public class DecisionMakerTest

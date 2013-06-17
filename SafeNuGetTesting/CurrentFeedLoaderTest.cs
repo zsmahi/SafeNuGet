@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 namespace Owasp.SafeNuGetTesting
 {
     [TestClass]
-    public class UnsafePackageLoaderTest
+    public class CurrentFeedLoaderTest
     {
         [TestMethod]
         public void TestLoad()
         {
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(Properties.TestResources.unsafepackages));
+            var stream = File.OpenRead(@"..\..\..\feed\unsafepackages.xml");
             var loader = new PackageListLoader();
             var packages = loader.LoadPackages(stream);
-            Assert.AreEqual(1, packages.Count);
-            Assert.IsTrue(packages.Exists(p => p.Id == "AntiXss" && p.Before == "4.2.1"));
+            Assert.IsTrue(packages.Count > 5);
+
         }
     }
 }

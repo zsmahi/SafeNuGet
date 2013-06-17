@@ -2,9 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Text;
-using SafeNuGet.NuGet;
+using Owasp.SafeNuGet.NuGet;
 
-namespace SafeNuGetTesting
+namespace Owasp.SafeNuGetTesting
 {
     [TestClass]
     public class NuGetPackageLoaderTest

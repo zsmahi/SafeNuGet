@@ -6,7 +6,7 @@
     <ProjectGuid>{DDE8E8FF-B468-4F7D-AF73-CB0D5D9A815D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SafeNuGetTesting</RootNamespace>
+    <RootNamespace>Owasp.SafeNuGetTesting</RootNamespace>
     <AssemblyName>SafeNuGetTesting</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CurrentFeedLoaderTest.cs" />
     <Compile Include="DecisionMakerTest.cs" />
     <Compile Include="Properties\TestResources.Designer.cs">
       <AutoGen>True</AutoGen>

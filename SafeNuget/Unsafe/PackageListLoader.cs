@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace SafeNuGet.Unsafe
+namespace Owasp.SafeNuGet.Unsafe
 {
     public class PackageListLoader
     {
-        private const String PackageUrl = "https://raw.github.com/eoftedal/SafeNuGet/master/feed/unsafepackages.xml";
+        private const String PackageUrl = "https://raw.github.com/OWASP/SafeNuGet/master/feed/unsafepackages.xml";
 
         public UnsafePackages GetCachedUnsafePackages(string cachePath, int cacheTimeInMinutes, out bool cacheHit)
         {

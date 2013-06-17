@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SafeNuGetTesting.Properties {
+namespace Owasp.SafeNuGetTesting.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SafeNuGetTesting.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SafeNuGetTesting.Properties.TestResources", typeof(TestResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Owasp.SafeNuGetTesting.Properties.TestResources", typeof(TestResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

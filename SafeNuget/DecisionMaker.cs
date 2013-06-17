@@ -1,12 +1,12 @@
-﻿using SafeNuGet.NuGet;
-using SafeNuGet.Unsafe;
+﻿using Owasp.SafeNuGet.NuGet;
+using Owasp.SafeNuGet.Unsafe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SafeNuGet
+namespace Owasp.SafeNuGet
 {
     public class DecisionMaker
     {

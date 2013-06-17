@@ -7,7 +7,7 @@
     <ProjectGuid>{DFAC6418-BBCE-40DF-90D5-35BDA41872A7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SafeNuGet</RootNamespace>
+    <RootNamespace>Owasp.SafeNuGet</RootNamespace>
     <AssemblyName>SafeNuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace SafeNuGet.NuGet
+namespace Owasp.SafeNuGet.NuGet
 {
     [XmlRoot(Namespace="", ElementName="packages")]
     public class NuGetPackages : List<NuGetPackage>

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace SafeNuGet.NuGet
+namespace Owasp.SafeNuGet.NuGet
 {
     public class NuGetPackageLoader
     {

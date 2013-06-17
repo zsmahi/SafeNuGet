@@ -1,4 +1,4 @@
-﻿using SafeNuGet.NuGet;
+﻿using Owasp.SafeNuGet.NuGet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace SafeNuGet.Unsafe
+namespace Owasp.SafeNuGet.Unsafe
 {
     [XmlRoot(Namespace = "", ElementName = "unsafepackages")]
     public class UnsafePackages : List<UnsafePackage>
