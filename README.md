@@ -1,6 +1,6 @@
 OWASP SafeNuGet
 ===============
-MsBuild task to warn about insecure NuGet libraries:
+OWASP SafeNuGet is an MsBuild task to warn about insecure NuGet libraries:
 https://nuget.org/packages/SafeNuGet/
 
 Use of libraries with known vulnerabilities is a big problem. So big in fact it has now made it to the [OWASP Top 10 2013](https://www.owasp.org/index.php/Top_10#OWASP_Top_10_for_2013). It's under [A9 Using Known Vulnerable Components](https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities).
