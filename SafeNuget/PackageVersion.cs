@@ -47,9 +47,9 @@ namespace Owasp.SafeNuGet
         public static bool operator ==(PackageVersion p1, PackageVersion p2)
         {
             if ((object)p1 == null && (object)p2 == null) return true;
-            if ((object)p1 == null) return false;
-            return p1.CompareTo(p2) == 0;
+            return (object) p1 != null && p1.CompareTo(p2) == 0;
         }
+
         public static bool operator !=(PackageVersion p1, PackageVersion p2)
         {
             return !(p1 == p2);
@@ -63,30 +63,27 @@ namespace Owasp.SafeNuGet
             if (pv._parts.Length > _parts.Length)
                 return -pv.CompareTo(this);
 
-            for (var i = 0; i < _parts.Length; i++)
+            for (var i = 0; i < _parts.Length;/*
+ i++*/
+)
+
+/* 
+ * it's an unreacheable code i++ 
+ * modification made by zsmahi
+ * zakaria08esi@gmail.com
+ 
+ */
             {
-                if (pv._parts.Length < i + 1)
-                {
-                    result = Compare(_parts[i], "0");
-                }
-                else
-                {
-                    result = Compare(_parts[i], pv._parts[i]);
-                }
-                if (result != 0)
-                    return result;
+                return result = Compare(_parts[i], pv._parts.Length < i + 1 ? "0" : pv._parts[i]);
             }
             return result;
         }
         private int Compare(String part1, String part2)
         {
             int i1, i2;
-            if (int.TryParse(part1, out i1) && int.TryParse(part2, out i2))
-            {
-                return i1.CompareTo(i2);
-            }
-            return part1.CompareTo(part2);
+            return int.TryParse(part1, out i1) && int.TryParse(part2, out i2)
+                       ? i1.CompareTo(i2)
+                       : part1.CompareTo(part2);
         }
-
     }
 }

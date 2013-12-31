@@ -48,7 +48,7 @@ namespace Owasp.SafeNuGet
                     unsafePackages = new PackageListLoader().GetUnsafePackages();
                 }
                 var failures = new DecisionMaker().Evaluate(packages, unsafePackages);
-                if (failures.Count() == 0) {
+                if (!failures.Any()) {
                     BuildEngine.LogMessageEvent(new BuildMessageEventArgs("No vulnerable packages found", "", _id, MessageImportance.High));
                 } else {
                     foreach(var k in failures) {
